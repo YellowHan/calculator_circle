@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./layout.css">
+</head>
+<body>
+  <div class="container">
+  <div class="cal">
+    <div class="view">
+      <span id="result"></span>
+    </div>
+    <div class="wrapper">
+      <div class="numbers">
+        <div id="num1" onclick="play('1')">1</div>
+        <div id="num2" onclick="play('2')">2</div>
+        <div id="num3" onclick="play('3')">3</div>
+        <div id="num4" onclick="play('4')">4</div>
+        <div id="num5" onclick="play('5')">5</div>
+        <div id="num6" onclick="play('6')">6</div>
+        <div id="num7" onclick="play('7')">7</div>
+        <div id="num8" onclick="play('8')">8</div>
+        <div id="num9" onclick="play('9')">9</div>
+        <div id="C" onclick="play('.')">.</div>
+        <div id="num0" onclick="play('0')">0</div>
+        <div id="equal" onclick="play('equal')">=</div>
+      </div>
+      <div class="operator">
+        <div id="add" onclick="play('+')">+</div>
+        <div id="sub" onclick="play('-')">−</div>
+        <div id="mul" onclick="play('*')">×</div>
+        <div id="div" onclick="play('/')">÷</div>
+      </div>
+    </div>
+  
+  </div>
+  </div>
+  <script src="./calculator.js"></script>
+</body>
+</html>
