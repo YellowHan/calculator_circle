@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  background-color: black;
 }
 .container {
   width: 800px;
@@ -19,14 +20,18 @@ body {
 }
 .view {
   width: 50%;
-  height: 50px;
+  height: 80px;
   border: 1px solid gray;
-  margin: 20px auto;
+  margin: 15px auto;
   text-align: right;
-  padding: 10px;
+  padding: 0px 10px 0px 10px;
   font-size: 30px;
   background: white;
   border-radius: 5px;
+}
+#reset {
+  float: right;
+  margin-right: 200px;
 }
 .wrapper {
   display: flex;
@@ -87,4 +92,12 @@ body {
   border-radius: 5px;
   padding-top: 30px;
   background: white;
+}
+#record {
+  display: block;
+  font-size: 18px;
+}
+#reset {
+  display: block;
+  font-size: 20px;
 }
