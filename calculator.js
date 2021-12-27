@@ -36,6 +36,8 @@ document.getElementById('equal').onclick = function () {
   }
   // print
   document.getElementById('result').innerText = result;
+  arrNum.splice(0, arrNum.length);
+  arrOpe.splice(0, arrOpe.length);
   i = 0;
 }
 // reset
