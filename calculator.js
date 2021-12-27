@@ -22,16 +22,36 @@ document.getElementById('equal').onclick = function () {
   arrNum[i] = document.getElementById('result').innerText;
   for (i = 0; i < arrOpe.length; i++) {
     if (arrOpe[i] == '+') {
-      result += parseInt(arrNum[i + 1]);
+      if(arrNum[i + 1] == "") {
+        break;
+      }
+      else {
+        result += parseInt(arrNum[i + 1]);
+      }
     }
     if (arrOpe[i] == '-') {
-      result -= parseInt(arrNum[i + 1]);
+      if(arrNum[i + 1] == "") {
+        break;
+      }
+      else {
+        result -= parseInt(arrNum[i + 1]);
+      }
     }
     if (arrOpe[i] == '*') {
-      result *= parseInt(arrNum[i + 1]);
+      if(arrNum[i + 1] == "") {
+        break;
+      }
+      else {
+        result *= parseInt(arrNum[i + 1]);
+      }
     }
     if (arrOpe[i] == '/') {
-      result /= parseInt(arrNum[i + 1]);
+      if(arrNum[i + 1] == "") {
+        break;
+      }
+      else {
+        result /= parseInt(arrNum[i + 1]);
+      }
     }
   }
   // print
