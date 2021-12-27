@@ -1,60 +1,53 @@
-let arr = new Array();
+let arrNum = new Array();
+let arrOpe = new Array();
 let i = 0;
-let middle;
-let number1 = "";
-let number2 = "";
 let result = 0.0;
 
+// input
 function play(n) {
-  if(n != "equal") {
-    arr[i] = n;
+  document.getElementById('record').innerText += n;
+  if (parseInt(n) >= 0 && parseInt(n) < 10) {
+    document.getElementById('result').innerText += n;
+  }
+  else {
+    arrOpe[i] = n;
+    arrNum[i] = document.getElementById('result').innerText;
+    console.log(document.getElementById('result').innerText);
+    console.log(arrOpe[i]);
+    document.getElementById('result').innerText = "";
     i++;
-    if(n == "+" || n == "-" || n == "*" || n == "/") {
-      document.getElementById('result').innerText = "";
-    }
-    else {
-      document.getElementById('result').innerText += n;
-    }
   }
 }
-
-document.getElementById('equal').onclick = function() {
-  if(arr.indexOf('+') >= 0) {
-    middle = arr.indexOf('+');
+document.getElementById('equal').onclick = function () {
+  // calculate
+  result = parseInt(arrNum[0]); 
+  arrNum[i] = document.getElementById('result').innerText;
+  for (i = 0; i < arrOpe.length; i++) {
+    if (arrOpe[i] == '+') {
+      result += parseInt(arrNum[i + 1]);
+    }
+    if (arrOpe[i] == '-') {
+      result -= parseInt(arrNum[i + 1]);
+    }
+    if (arrOpe[i] == '*') {
+      result *= parseInt(arrNum[i + 1]);
+    }
+    if (arrOpe[i] == '/') {
+      result /= parseInt(arrNum[i + 1]);
+    }
   }
-  if(arr.indexOf('-') >= 0) {
-    middle = arr.indexOf('-');
-  }
-  if(arr.indexOf('*') >= 0) {
-    middle = arr.indexOf('*');
-  }
-  if(arr.indexOf('/') >= 0) {
-    middle = arr.indexOf('/');
-  }
-
-  for(n = 0; n < middle; n++) {
-    number1 += arr[n];
-  }
-  for(n = middle+1; n < i; n++){
-    number2 += arr[n];
-  }
-
-  if(arr[middle] == "+") {
-    result = parseFloat(number1) + parseFloat(number2);
-  }
-  if(arr[middle] == "-") {
-    result = parseFloat(number1) - parseFloat(number2);
-  }
-  if(arr[middle] == "*") {
-    result = parseFloat(number1) * parseFloat(number2);
-  }
-  if(arr[middle] == "/") {
-    result = parseFloat(number1) / parseFloat(number2);
-  }
+  // print
   document.getElementById('result').innerText = result;
-  console.log(number1+arr[middle]+number2+"="+result);
-  number1 = result;
-  number2 = "";
-  arr.splice(0,arr.length);
+  console.log(arrNum[arrNum.length - 1]);
+  console.log("= " + result);
+  i = 0;
+}
+// reset
+document.getElementById('reset').onclick = function () {
+  document.getElementById('result').innerText = "";
+  document.getElementById('record').innerText = "";
+  result = 0.0;
+  arrNum.splice(0, arrNum.length);
+  arrOpe.splice(0, arrOpe.length);
   i = 0;
 }
