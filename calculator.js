@@ -12,8 +12,6 @@ function play(n) {
   else {
     arrOpe[i] = n;
     arrNum[i] = document.getElementById('result').innerText;
-    console.log(document.getElementById('result').innerText);
-    console.log(arrOpe[i]);
     document.getElementById('result').innerText = "";
     i++;
   }
@@ -38,8 +36,6 @@ document.getElementById('equal').onclick = function () {
   }
   // print
   document.getElementById('result').innerText = result;
-  console.log(arrNum[arrNum.length - 1]);
-  console.log("= " + result);
   i = 0;
 }
 // reset
